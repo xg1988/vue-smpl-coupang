@@ -31,7 +31,7 @@ export default {
 	#list_sm{
 		margin: 10px;
         a{
-            height: 80px;
+            height: 100px;
         }
         img{
             height: 60%;
