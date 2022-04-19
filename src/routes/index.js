@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './Home'
 import About from './About'
+import Search from './Search'
+import Category from './Category'
+import Goldbox from './Goldbox'
 
 export default createRouter({
   history: createWebHistory(),
@@ -13,6 +16,18 @@ export default createRouter({
     {
       path: '/about',
       component: About
+    },
+    {
+      path: '/search',
+      component: Search
+    },
+    {
+      path: '/category',
+      component: Category
+    },
+    {
+      path: '/goldbox',
+      component: Goldbox
     }
   ]
 })

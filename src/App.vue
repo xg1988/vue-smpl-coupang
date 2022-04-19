@@ -1,14 +1,40 @@
 <template>
-  <TheHeader />
+  <HeaderMenu />
   <RouterView />
 </template>
 
 <script>
-import TheHeader from '~/components/TheHeader'
+import HeaderMenu from '~/components/HeaderMenu'
+import * as bootstrap from 'bootstrap';
+
 
 export default {
+  
   components: {
-    TheHeader
+    HeaderMenu
   }
 }
 </script>
+
+<style lang="scss">
+  div{
+    font-family: 'Jua', sans-serif;
+  }
+
+  .contArea{
+		margin: 10px;
+	}
+	#list a{
+		--margin-bottom: 10px;
+	}
+	
+	#list_sm{
+		margin: 10px;
+        a{
+            height: 80px;
+        }
+        img{
+            height: 60%;
+        }
+	}
+</style>
