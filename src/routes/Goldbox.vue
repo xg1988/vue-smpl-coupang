@@ -29,7 +29,7 @@
     
     <small v-if="obj.isRocket">로켓배송</small>
     <small v-if="obj.isFreeShipping">무료배송</small>
-    <small>가격: {{obj.productPrice}}</small>
+    <small>가격: {{obj.productPrice.toLocaleString('ko-KR')}} 원</small>
     
   </div>
   </div>
