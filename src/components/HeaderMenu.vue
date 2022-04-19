@@ -10,7 +10,8 @@
       <ul class="navbar-nav">
         <li v-for="nav in navigations"
             :key="nav.name" 
-            class="nav-item">
+            class="nav-item"
+            @click="navbarToggle()">
           <router-link class="nav-link active" 
             :to="nav.href"
             active-class="active"
@@ -78,6 +79,9 @@ export default{
             }else{
                 return path === this.$route.fullPath;
             }
+        }
+        ,navbarToggle(){
+          document.querySelector('.navbar-toggler').click();
         }
     }
 }
