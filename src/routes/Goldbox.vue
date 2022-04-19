@@ -16,7 +16,7 @@
   <div v-for="obj in objectList" 
                 :key="obj.productId"
                 :movie="obj">
-  <router-link :to="obj.productUrl" class="list-group-item list-group-item-action">
+  <a :href="obj.productUrl" class="list-group-item list-group-item-action">
   <div class="row">
   	<div class="col-4">
   	<img :src="obj.productImage" class="card-img-top" alt="goldbox">
@@ -33,7 +33,7 @@
     
   </div>
   </div>
-  </router-link>
+  </a>
   </div>
 </div>
 <nav aria-label="Page navigation example">
