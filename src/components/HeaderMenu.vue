@@ -2,7 +2,8 @@
 <header>
   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/" style="font-weight: 800">쿠팡 간편조회</a>
+    <!--<a class="navbar-brand" href="/" style="font-weight: 800">쿠팡 간편조회</a>-->
+    <Logo />
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,8 +42,13 @@
 
 <script>
 import {mapState} from "vuex"
+import Logo from "~/components/Logo"
 
 export default{
+  components:{
+    Logo
+  }
+  ,
   mounted(){
     
   }

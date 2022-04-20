@@ -1,10 +1,12 @@
 <template>
   <HeaderMenu />
   <RouterView />
+  <Footer />
 </template>
 
 <script>
 import HeaderMenu from '~/components/HeaderMenu'
+import Footer from '~/components/Footer'
 import * as bootstrap from 'bootstrap';
 
 
@@ -12,6 +14,7 @@ export default {
   
   components: {
     HeaderMenu
+    , Footer
   }
 }
 </script>
