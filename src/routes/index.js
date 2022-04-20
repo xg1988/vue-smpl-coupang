@@ -28,6 +28,10 @@ export default createRouter({
     {
       path: '/goldbox',
       component: Goldbox
+    },
+    {
+      path: '/:notFound(.*)'
+      ,component: About
     }
   ]
 })

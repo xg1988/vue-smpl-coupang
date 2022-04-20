@@ -1,156 +1,84 @@
 <template>
     <div class="contArea">
+      <Navbar :headline="'검색 - 키워드 검색으로 상품 10개를 조회할 수 있습니다.'"/>
+      <!--<Navbar :headline="'쿠팡파트너스 입니다.'"/>-->
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <span class="navbar-text">
- 검색 - 키워드 검색으로 상품 10개를 조회할 수 있습니다.
-    </span>
-  </div>
-</nav>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="d-flex">
+            <input class="form-control"
+                   type="text" 
+                   placeholder="키워드 !" 
+                   maxlength="10"
+                   v-model="keyword"
+                   @keyup.enter="apply">
+            <a class="btn btn-outline-success" 
+                    @click="apply">Search</a>
+          </div>
+        </div>
+      </nav>
+    </div>
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="키워드 !" aria-label="Search" maxlength="10">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-
-<div id="list_sm" class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-  <div class="row">
-  	<div class="col-4">
-  	<img src="https://static.coupangcdn.com/image/retail/images/7079134138360563-e6838741-18ab-4078-b563-f87fc106f7d2.jpg" class="card-img-top" alt="goldbox">
-  </div>
-  <div class="col-8">
-  <div class="d-flex w-100 justify-content-between">
-      <small>BYO 식물유래 유산균 스킨 플러스 100p, 200g, 1개</small>
+    <Loader v-if="loading"/>
+    <div v-else>
+        <div id="list-sm">
+            <PrdtItem v-for="obj in objectList" 
+                            :key="obj.productId"
+                            :obj="obj">
+            </PrdtItem>
+        </div>
     </div>
-    <small class="btn-primary">로켓배송</small>
-    <small>가격: 27,930원</small>
-  </div>
-  </div>
-  </a>
-  <a href="https://link.coupang.com/re/AFFSDP?lptag=AF2488046&pageKey=5303046783&itemId=7660163192&vendorItemId=70476953941&traceid=V0-153-51724d3f29651663" class="list-group-item list-group-item-action">
-  <div class="row">
-  	<div class="col-4">
-  	<img src="https://static.coupangcdn.com/image/retail/images/2022/03/17/17/8/3579406f-9479-407e-8f3b-4430b1f237e4.jpg" class="card-img-top" alt="goldbox">
-  </div>
-  <div class="col-8">
-  <div class="d-flex w-100 justify-content-between">
-      <small>BYO 식물유래 유산균 스킨 플러스 100p, 200g, 1개</small>
-    </div>
-    <small>로켓배송</small>
-    <small>가격: 27,930원</small>
-  </div>
-  </div>
-  </a>
-  
-   <a href="#" class="list-group-item list-group-item-action">
-  <div class="row">
-  	<div class="col-4">
-  	<img src="https://static.coupangcdn.com/image/retail/images/7079134138360563-e6838741-18ab-4078-b563-f87fc106f7d2.jpg" class="card-img-top" alt="goldbox">
-  </div>
-  <div class="col-8">
-  <div class="d-flex w-100 justify-content-between">
-      <small>BYO 식물유래 유산균 스킨 플러스 100p, 200g, 1개</small>
-    </div>
-    <small>로켓배송</small>
-    <small>가격: 27,930원</small>
-  </div>
-  </div>
-  </a>
-  <a href="https://link.coupang.com/re/AFFSDP?lptag=AF2488046&pageKey=5303046783&itemId=7660163192&vendorItemId=70476953941&traceid=V0-153-51724d3f29651663" class="list-group-item list-group-item-action">
-  <div class="row">
-  	<div class="col-4">
-  	<img src="https://static.coupangcdn.com/image/retail/images/2022/03/17/17/8/3579406f-9479-407e-8f3b-4430b1f237e4.jpg" class="card-img-top" alt="goldbox">
-  </div>
-  <div class="col-8">
-  <div class="d-flex w-100 justify-content-between">
-      <small>BYO 식물유래 유산균 스킨 플러스 100p, 200g, 1개</small>
-    </div>
-    <small>로켓배송</small>
-    <small>가격: 27,930원</small>
-  </div>
-  </div>
-  </a>
-  
-   <a href="#" class="list-group-item list-group-item-action ">
-  <div class="row">
-  	<div class="col-4">
-  	<img src="https://static.coupangcdn.com/image/retail/images/7079134138360563-e6838741-18ab-4078-b563-f87fc106f7d2.jpg" class="card-img-top" alt="goldbox">
-  </div>
-  <div class="col-8">
-  <div class="d-flex w-100 justify-content-between">
-      <small>BYO 식물유래 유산균 스킨 플러스 100p, 200g, 1개</small>
-    </div>
-    <small>로켓배송</small>
-    <small>가격: 27,930원</small>
-  </div>
-  </div>
-  </a>
-  <a href="https://link.coupang.com/re/AFFSDP?lptag=AF2488046&pageKey=5303046783&itemId=7660163192&vendorItemId=70476953941&traceid=V0-153-51724d3f29651663" class="list-group-item list-group-item-action">
-  <div class="row">
-  	<div class="col-4">
-  	<img src="https://static.coupangcdn.com/image/retail/images/2022/03/17/17/8/3579406f-9479-407e-8f3b-4430b1f237e4.jpg" class="card-img-top" alt="goldbox">
-  </div>
-  <div class="col-8">
-  <div class="d-flex w-100 justify-content-between">
-      <small>BYO 식물유래 유산균 스킨 플러스 100p, 200g, 1개</small>
-    </div>
-    <small>로켓배송</small>
-    <small>가격: 27,930원</small>
-  </div>
-  </div>
-  </a>
-  
-  <a href="https://link.coupang.com/re/AFFSDP?lptag=AF2488046&pageKey=5303046783&itemId=7660163192&vendorItemId=70476953941&traceid=V0-153-51724d3f29651663" class="list-group-item list-group-item-action">
-  <div class="row">
-  	<div class="col-4">
-  	<img src="https://static.coupangcdn.com/image/retail/images/2022/03/17/17/8/3579406f-9479-407e-8f3b-4430b1f237e4.jpg" class="card-img-top" alt="goldbox">
-  </div>
-  <div class="col-8">
-  <div class="d-flex w-100 justify-content-between">
-      <small>BYO 식물유래 유산균 스킨 플러스 100p, 200g, 1개</small>
-    </div>
-    <small>로켓배송</small>
-    <small>가격: 27,930원</small>
-  </div>
-  </div>
-  </a>
-  
-  <a href="https://link.coupang.com/re/AFFSDP?lptag=AF2488046&pageKey=5303046783&itemId=7660163192&vendorItemId=70476953941&traceid=V0-153-51724d3f29651663" class="list-group-item list-group-item-action">
-  <div class="row">
-  	<div class="col-4">
-  	<img src="https://static.coupangcdn.com/image/retail/images/2022/03/17/17/8/3579406f-9479-407e-8f3b-4430b1f237e4.jpg" class="card-img-top" alt="goldbox">
-  </div>
-  <div class="col-8">
-  <div class="d-flex w-100 justify-content-between">
-      <small>BYO 식물유래 유산균 스킨 플러스 100p, 200g, 1개</small>
-    </div>
-    <small>로켓배송</small>
-    <small>가격: 27,930원</small>
-  </div>
-  </div>
-  </a>
-</div>
-<div class="center">
-<nav aria-label="Page navigation">
-  <ul class="pagination justify-content-center">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
-</div>
-</div>
-
+    <Pagination v-if="pageCnt > 0" :method="'search'" :categoryId="keyword"/>
 </template>
+
+<script>
+import {mapState} from 'vuex'
+import Loader from "~/components/Loader";
+import Pagination from "~/components/Pagination";
+import PrdtItem from "~/components/PrdtItem";
+import Navbar from "~/components/Navbar";
+
+export default{
+    components:{
+        Loader
+        , Pagination
+        , PrdtItem
+        , Navbar
+    },  
+    mounted(){
+    },
+    methods:{
+        async apply(payload){
+               console.log("payload: ", payload);
+               console.log("this.keyword: ", this.keyword);
+              if(this.keyword == undefined ) {
+                alert("검색어는 2자 이상 입력해주세요");
+                return ;
+              }
+              if(this.keyword.length < 2){
+                alert("검색어는 2자 이상 입력해주세요");
+                return;
+              }
+              
+               this.$store.dispatch('coupang/apiCall', { //store -movies에서 actions를 실행하게 만든다.
+                   method: "search"
+                   , keyword: this.keyword
+                   , pageNo: payload.pageNo
+               });   
+        }
+    }
+    ,
+    computed:{ // 계산된 데이터를 저장함
+        ...mapState('coupang', [
+            'objectList'
+            , 'pageCnt'
+            , 'pageNo'
+            , 'message'
+            , 'loading'
+        ])
+    }
+}
+</script>
 
 <style lang="scss" scoped>
     

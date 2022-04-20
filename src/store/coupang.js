@@ -31,7 +31,7 @@ export default{
 
             
         },// 통합적인 데이터 변경을 위한 함수
-        resetMovies(state){
+        resetDatas(state){
             state.objectList=[];
             state.message = _defaultMessage;
             state.loading = false;
@@ -42,7 +42,15 @@ export default{
     },
     // 비동기로 동작
     actions:{
-
+        resetData({state, commit}, payload){
+            commit('updateState', {
+                objectList:[]
+                , loading : false
+                , pageCnt : 0
+                , pageNo  :  0
+            });
+        }
+        ,
         async apiCall({state, commit}, payload){ //context를 구조분해할당한 commit
             if(state.loading){
                 return;
@@ -61,9 +69,9 @@ export default{
                 let pageNo = "";
                 if(payload.method == "goldbox"){
                     response = res.data.data.list;
-                }else if(payload.method == "searchList"){
-                    response = res.data.data.list;
-                }else if(payload.method == "categoryList"){
+                }else if(payload.method == "search"){
+                    response = res.data.data;
+                }else if(payload.method == "bestcategories"){
                     response = res.data.data.list;
                 }
                 pageCnt = res.data.data.pageCnt;
@@ -113,10 +121,11 @@ async function _fetchCoupangAPI(payload){
         const keyword =  (payload.keyword != undefined)? payload.keyword: "";
         console.log(keyword);
         url += `?keyword=${keyword}`;
-    }else if(method == 'category'){
+    }else if(method == 'bestcategories'){
         const categoryId =  (payload.categoryId != undefined)? payload.categoryId: "";
+        const pageNo =  (payload.pageNo != undefined)? payload.pageNo: "1";
         console.log(categoryId);
-        url += `?categoryId=${categoryId}`;
+        url += `?categoryId=${categoryId}&pageNo=${pageNo}`;
     }
     console.log(url);
     
