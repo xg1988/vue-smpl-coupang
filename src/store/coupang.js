@@ -111,8 +111,8 @@ async function _fetchCoupangAPI(payload){
     const method = (payload.method)? payload.method: "goldbox";
     console.log("method: ", method);
     
-    //let url = `https://sb-service01.herokuapp.com/api/coupang/${method}`;
-    let url = `http://jobsjo88.cafe24.com/api/coupang/${method}`;
+    let url = `https://sb-service01.herokuapp.com/api/coupang/${method}`;
+    //let url = `http://jobsjo88.cafe24.com/api/coupang/${method}`;
     if(method == 'goldbox'){
         const pageNo =  (payload.pageNo != undefined)? payload.pageNo: "1";
         console.log(pageNo);
