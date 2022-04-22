@@ -1,6 +1,6 @@
 <template>
   <div class="contArea">
-<button type="button" class="btn btn-primary" @click="addFavorite">즐겨찾기 추가</button>
+
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <span class="navbar-text">
@@ -101,14 +101,11 @@ export default {
 
 		
 
-		return triggerDefault; 
+		  return triggerDefault; 
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .contArea{
-
-  }
 </style>
