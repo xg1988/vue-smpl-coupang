@@ -53,7 +53,4 @@
 
 
 <style lang="scss" scoped>
-  .contArea{
-
-  }
 </style>

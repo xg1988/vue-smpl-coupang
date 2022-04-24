@@ -46,6 +46,9 @@ export default{
         , Navbar
     },  
     mounted(){
+      this.$store.dispatch('coupang/resetData', { //store -movies에서 actions를 실행하게 만든다.
+          
+      });  
     },
     methods:{
         async apply(payload){
