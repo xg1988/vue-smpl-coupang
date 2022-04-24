@@ -8,8 +8,44 @@
     </span>
   </div>
 </nav>
+
+<div class="swiper-area">
+
+<swiper
+    :pagination="{
+      dynamicBullets: true,
+    }"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide>
+
+      <a href="https://link.coupang.com/a/mns3P">
+        <img src="https://img1a.coupangcdn.com/image/affiliate/event/promotion/2022/04/19/2097f7cdadf800c701ae89d6fb16edee.png" 
+          alt="이벤트1">
+      </a>
+    </swiper-slide>
+    <swiper-slide>
+
+      <a href="https://link.coupang.com/a/mntcn">
+        <img src="https://img5a.coupangcdn.com/image/affiliate/event/promotion/2022/04/22/bc3dc8cda5bd00d801f194f6f4a45341.png" 
+          alt="이벤트2">
+      </a>
+    </swiper-slide>
+    <swiper-slide>
+
+      <a href="https://link.coupang.com/a/mntjF">
+        <img src="https://image15.coupangcdn.com/image/affiliate/event/promotion/2022/03/17/b940f5e81570000801a78a5f99866e4f.png" 
+          alt="이벤트3">
+      </a>
+    </swiper-slide>
+  </swiper>
+
+</div>
+
 <center>
-<div id="card" class="card text-dark bg-light mb-3 " style="max-width: 18rem;">
+
+<div id="card" class="card text-dark bg-light mb-3 " style="max-width: 18rem; margin-top:20px;">
   <div class="card-header">쿠팡 간편조회 기능1 검색</div>
   <div class="card-body">
     <h5 class="card-title">검색</h5>
@@ -52,60 +88,69 @@
 </template>
 
 <script>
+ // Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+
+
+// import required modules
+import { Pagination } from "swiper";
+
+
 export default {
-  methods:{
-    addFavorite() {
-        var bookmarkURL = window.location.href; 
+    components: {
+      Swiper,
+      SwiperSlide ,
+    },
+    setup() {
+    return {
+      modules: [Pagination],
+    };
+  },
+  };
 
-		var bookmarkTitle = document.title;
-
-		var triggerDefault = false; 
-
-			
-
-		if (window.sidebar && window.sidebar.addPanel) { 
-
-			// Firefox version < 23 
-
-			window.sidebar.addPanel(bookmarkTitle, bookmarkURL, ''); 
-
-		} else if ((window.sidebar && (navigator.userAgent.toLowerCase().indexOf('firefox') > -1)) || (window.opera && window.print)) { 
-
-			// Firefox version >= 23 and Opera Hotlist 
-
-			var $this = $(this); 
-
-			$this.attr('href', bookmarkURL); 
-
-			$this.attr('title', bookmarkTitle); 
-
-			$this.attr('rel', 'sidebar'); 
-
-			$this.off(e); 
-
-			triggerDefault = true; 
-
-		} else if (window.external && ('AddFavorite' in window.external)) { 
-
-			// IE Favorite 
-
-			window.external.AddFavorite(bookmarkURL, bookmarkTitle); 
-
-		} else { 
-
-			// WebKit - Safari/Chrome 
-
-			alert((navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 키를 눌러 즐겨찾기에 등록하실 수 있습니다.'); 
-
-		} 
-
-		
-
-		  return triggerDefault; 
-    }
-  }
-}
 </script>
 
 <style lang="scss" scoped>
+
+.swiper-area{
+  height: 300px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
 </style>
