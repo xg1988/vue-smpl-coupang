@@ -118,7 +118,7 @@ export default {
 <style lang="scss" scoped>
 
 .swiper-area{
-  height: 300px;
+  height: 450px;
 }
 
 .swiper {
