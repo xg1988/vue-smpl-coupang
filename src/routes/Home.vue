@@ -1,13 +1,7 @@
 <template>
   <div class="contArea">
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <span class="navbar-text">
- 		About 쿠팡간편조회 - 쿠팡 앱으로 들어가지 않아도 간편하게 조회 가능합니다.
-    </span>
-  </div>
-</nav>
+<Navbar :headline="'About 쿠팡간편조회 - 쿠팡 앱으로 들어가지 않아도 간편하게 조회 가능합니다.'"/>
 
 <div class="swiper-area">
 
