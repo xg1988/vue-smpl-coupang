@@ -14,8 +14,8 @@
   <div class="card-body">
     <h5 class="card-title">검색</h5>
     <p class="card-text">키워드 검색으로 상품 10개를 조회할 수 있습니다.</p>
-    <router-link class="nav-link active" 
-            :to="'/search'">
+    <router-link class="nav-link active"
+            :to="'/coupang/search'">
     <button type="button" class="btn btn-primary">바로가기</button>
     </router-link>
   </div>
@@ -26,8 +26,8 @@
   <div class="card-body">
     <h5 class="card-title">카테고리별</h5>
     <p class="card-text">카테고리별 상품을 간편하게 조회할 수 있습니다.</p>
-    <router-link class="nav-link active" 
-            :to="'/category'">
+    <router-link class="nav-link active"
+            :to="'/coupang/category'">
     <button type="button" class="btn btn-primary">바로가기</button>
     </router-link>
   </div>
@@ -38,8 +38,8 @@
   <div class="card-body">
     <h5 class="card-title">골드박스</h5>
     <p class="card-text">매일 아침 7시 30분 업데이트 되는 골드박스 상품을 조회합니다.</p>
-    <router-link class="nav-link active" 
-            :to="'/goldbox'">
+    <router-link class="nav-link active"
+            :to="'/coupang/goldbox'">
     <button type="button" class="btn btn-primary">바로가기</button>
     </router-link>
   </div>

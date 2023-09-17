@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li v-for="nav in navigations"
-            :key="nav.name" 
+            :key="nav.name"
             class="nav-item"
             @click="navbarToggle()">
-          <router-link class="nav-link active" 
+          <router-link class="nav-link active"
             :to="nav.href"
             active-class="active"
             :class="{active: isMatch(nav.href)}">
@@ -34,7 +34,7 @@
         </li>-->
       </ul>
     </div>
-    
+
   </div>
 </nav>
 </header>
@@ -50,7 +50,7 @@ export default{
   }
   ,
   mounted(){
-    
+
   }
   ,
   data(){
@@ -58,22 +58,22 @@ export default{
             navigations:[
                 {
                     name:'검색'
-                    ,href:"/search"
+                    ,href:"/coupang/search"
                 },
                 {
                     name:'카테고리별'
-                    ,href:"/category"
+                    ,href:"/coupang/category"
                 },
                 {
                     name:'골드박스'
-                    ,href:"/goldbox"
+                    ,href:"/coupang/goldbox"
                 },
                 {
                     name:'About'
-                    ,href:"/about"
+                    ,href:"/coupang/about"
                 }
             ]
-        
+
         }
     },
     methods:{

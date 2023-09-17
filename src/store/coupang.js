@@ -1,5 +1,5 @@
 import axios from "axios";
-import _uniqBy from "lodash/uniqBy";
+//import _uniqBy from "lodash/uniqBy";
 
 const _defaultMessage = '쿠팡 상품검색';
 
@@ -75,6 +75,7 @@ export default{
                 }else if(payload.method == "bestcategories"){
                     response = res.data.data;
                 }
+
                 pageCnt = res.pageCnt;
                 pageNo = res.pageNo;
 
@@ -105,7 +106,9 @@ export default{
 async function _fetchCoupangAPI(payload){
     const method = (payload.method)? payload.method: "goldbox";
 
-    let url = `http://localhost:8081/coupang/${method}`
+    //let url = `http://xg1988py.cafe24.com:8080/coupang/${method}`
+    //let url = `http://localhost:8080/coupang/${method}`
+    let url = `http://ec2-54-180-149-10.ap-northeast-2.compute.amazonaws.com:8080/coupang/${method}`
 
     if(method == 'goldbox'){
         const pageNo =  (payload.pageNo != undefined)? payload.pageNo: "1";

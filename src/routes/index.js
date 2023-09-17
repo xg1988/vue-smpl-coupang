@@ -14,24 +14,28 @@ export default createRouter({
       component: Home
     },
     {
-      path: '/about',
+      path: '/coupang',
+      component: Home
+    },
+    {
+      path: '/coupang/about',
       component: About
     },
     {
-      path: '/search',
+      path: '/coupang/search',
       component: Search
     },
     {
-      path: '/category',
+      path: '/coupang/category',
       component: Category
     },
     {
-      path: '/goldbox',
+      path: '/coupang/goldbox',
       component: Goldbox
     },
     {
-      path: '/:notFound(.*)'
-      ,component: About
+      path: '/:pathMatch(.*)*',
+      redirect: "/404"
     }
   ]
 })

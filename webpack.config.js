@@ -15,7 +15,8 @@ module.exports = (env, options) => {
     // entry: { main: '', module1: '', module2: '' },
     output: {
       //path: `${__dirname}/dist`,
-      path: '/Users/joseong-ug/코드/eclipse/sb-service01/src/main/resources/static',
+      path: '/Users/joseong-ug/코드/Frontend/vue-smpl-coupang/dist',
+
       // filename: '[name].js',
       //publicPath: '/',
       clean: true
@@ -68,13 +69,14 @@ module.exports = (env, options) => {
       })
     ],
     devServer: {
-      port: 8081, // 클라이언트 포트 번호
+      historyApiFallback: true
+      /*port: 8081, // 클라이언트 포트 번호
       proxy: {
-        '/coupang': { // /api/로 시작하는 url은 아래의 전체 도메인을 추가하고, 옵션을 적용
+        '/coupang/*': { // /api/로 시작하는 url은 아래의 전체 도메인을 추가하고, 옵션을 적용
           target: 'http://localhost:8080', // 클라이언트에서 api로 보내는 요청은 주소를 3095로 바꿔서 보내겠다 라는 뜻
           changeOrigin: true, // cross origin 허용 설정
         },
-      },
+      },*/
     }
   }
 }

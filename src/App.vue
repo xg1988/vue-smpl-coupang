@@ -11,7 +11,7 @@ import * as bootstrap from 'bootstrap';
 
 
 export default {
-  
+
   components: {
     HeaderMenu
     , Footer
@@ -20,9 +20,6 @@ export default {
 </script>
 
 <style lang="scss">
-  div{
-    font-family: 'Jua', sans-serif;
-  }
 
   .contArea{
 		margin: 10px;
@@ -30,7 +27,7 @@ export default {
 	#list a{
 		--margin-bottom: 10px;
 	}
-	
+
 	#list_sm{
 		margin: 10px;
         a{

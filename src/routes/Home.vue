@@ -15,21 +15,21 @@
     <swiper-slide>
 
       <a href="https://link.coupang.com/a/mns3P">
-        <img src="https://img1a.coupangcdn.com/image/affiliate/event/promotion/2022/04/19/2097f7cdadf800c701ae89d6fb16edee.png" 
+        <img src="https://img1a.coupangcdn.com/image/affiliate/event/promotion/2022/04/19/2097f7cdadf800c701ae89d6fb16edee.png"
           alt="이벤트1">
       </a>
     </swiper-slide>
     <swiper-slide>
 
       <a href="https://link.coupang.com/a/mntcn">
-        <img src="https://img5a.coupangcdn.com/image/affiliate/event/promotion/2022/04/22/bc3dc8cda5bd00d801f194f6f4a45341.png" 
+        <img src="https://img5a.coupangcdn.com/image/affiliate/event/promotion/2022/04/22/bc3dc8cda5bd00d801f194f6f4a45341.png"
           alt="이벤트2">
       </a>
     </swiper-slide>
     <swiper-slide>
 
       <a href="https://link.coupang.com/a/mntjF">
-        <img src="https://image15.coupangcdn.com/image/affiliate/event/promotion/2022/03/17/b940f5e81570000801a78a5f99866e4f.png" 
+        <img src="https://image15.coupangcdn.com/image/affiliate/event/promotion/2022/03/17/b940f5e81570000801a78a5f99866e4f.png"
           alt="이벤트3">
       </a>
     </swiper-slide>
@@ -44,8 +44,8 @@
   <div class="card-body">
     <h5 class="card-title">검색</h5>
     <p class="card-text">키워드 검색으로 상품 10개를 조회할 수 있습니다.</p>
-    <router-link class="nav-link active" 
-            :to="'/search'">
+    <router-link class="nav-link active"
+            :to="'/coupang/search'">
     <button type="button" class="btn btn-primary">바로가기</button>
     </router-link>
   </div>
@@ -56,8 +56,8 @@
   <div class="card-body">
     <h5 class="card-title">카테고리별</h5>
     <p class="card-text">카테고리별 상품을 간편하게 조회할 수 있습니다.</p>
-    <router-link class="nav-link active" 
-            :to="'/category'">
+    <router-link class="nav-link active"
+            :to="'/coupang/category'">
     <button type="button" class="btn btn-primary">바로가기</button>
     </router-link>
   </div>
@@ -68,8 +68,8 @@
   <div class="card-body">
     <h5 class="card-title">골드박스</h5>
     <p class="card-text">매일 아침 7시 30분 업데이트 되는 골드박스 상품을 조회합니다.</p>
-    <router-link class="nav-link active" 
-            :to="'/goldbox'">
+    <router-link class="nav-link active"
+            :to="'/coupang/goldbox'">
     <button type="button" class="btn btn-primary">바로가기</button>
     </router-link>
   </div>
